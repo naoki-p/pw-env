@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  pw:
+    build: ./
+    restart: always
+    tty: true
+    ipc: host
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - ./app:/home/pwuser/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    user: pwuser
+    working_dir: /home/pwuser/app
+    security_opt:
+      - seccomp:./seccomp_profile.json

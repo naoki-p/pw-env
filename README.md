@@ -10,3 +10,6 @@
 
 * dockerオプションはこちらを参考
 - https://playwright.dev/docs/docker
+
+## run with compose
+$ docker compose run --rm pw bash
